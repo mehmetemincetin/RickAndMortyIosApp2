@@ -1,0 +1,19 @@
+//
+//  RMLocationViewController.swift
+//  RickAndMorty
+//
+//  Created by MEHMET EMİN ÇETİN on 25.07.2024.
+//
+
+import UIKit
+
+final class RMLocationViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .systemBackground
+        title = "Locations"
+    }
+    
+}
