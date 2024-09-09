@@ -21,5 +21,4 @@ enum RMCharacterStatus: String, Codable {
             return "Unknown" 
         }
     }
-    
 }
