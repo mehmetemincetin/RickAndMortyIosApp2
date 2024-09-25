@@ -23,10 +23,10 @@ final class RMRequest {
     let endpoint: RMEndpoint
     
     /// Path components for API, if any
-    let pathComponents: [String]
+    private let pathComponents: [String]
     
     /// Query arguments for API, if any
-    let queryParameters: [URLQueryItem]
+    private let queryParameters: [URLQueryItem]
     
     /// Constructed url for the api request in string format
     private var urlString: String {
@@ -129,4 +129,6 @@ final class RMRequest {
 
 extension RMRequest {
     static let listCharactersRequests = RMRequest(endpoint: .character)
+    static let listEpisodesRequest = RMRequest(endpoint: .episode)
+    static let listLocationsRequest = RMRequest(endpoint: .location)
 }
