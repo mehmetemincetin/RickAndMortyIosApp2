@@ -5,8 +5,9 @@
 //  Created by MEHMET EMİN ÇETİN on 25.09.2024.
 //
 
-import Foundation
+import UIKit
 
 struct RMNoSearchResultsViewViewModel  {
-    init() {}
+    let title = "No Results"
+    let image = UIImage(systemName: "magnifyingglass.circle")
 }
