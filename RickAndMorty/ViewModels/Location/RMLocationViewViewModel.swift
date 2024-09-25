@@ -21,7 +21,7 @@ final class RMLocationViewViewModel {
                 let cellViewModel = RMLocationTableViewCellViewModel(location: location)
                 cellViewModels.append(cellViewModel)
                 
-                if cellViewModels.contains(cellViewModel) {
+                if !cellViewModels.contains(cellViewModel) {
                     cellViewModels.append(cellViewModel)
                 }
             }
@@ -36,6 +36,13 @@ final class RMLocationViewViewModel {
     public private(set) var cellViewModels: [RMLocationTableViewCellViewModel] = []
     
     init() {}
+    
+    public func location(at index: Int) -> RMLocation? {
+        guard index < locations.count, index >= 0 else {
+            return nil
+        }
+        return self.locations[index]
+    }
     
     public func fetchLocations() {
         RMService.shared.execute(.listLocationsRequest, expecting: RMGetAllLocationsResponse.self) { [weak self] result in
