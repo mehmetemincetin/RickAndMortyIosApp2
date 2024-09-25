@@ -1,13 +1,13 @@
 //
-//  RMGetAllCharactersResponse.swift
+//  RMGetAllLocationsResponse.swift
 //  RickAndMorty
 //
-//  Created by MEHMET EMİN ÇETİN on 30.07.2024.
+//  Created by MEHMET EMİN ÇETİN on 25.09.2024.
 //
 
 import Foundation
 
-struct RMGetAllCharactersResponse: Codable {
+struct RMGetAllLocationsResponse: Codable {
     
     struct Info: Codable {
         let count: Int
@@ -16,6 +16,6 @@ struct RMGetAllCharactersResponse: Codable {
         let prev: String?
     }
     let info: Info
-    let results: [RMCharacter]
+    let results: [RMLocation ]
 }
-
+ 
