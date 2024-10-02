@@ -62,6 +62,7 @@
 		50A3CD392C564AC30029CFFC /* RMEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3CD382C564AC30029CFFC /* RMEndpoint.swift */; };
 		50B2F9122C6797D3005E97E3 /* RMFooterLoadingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2F9112C6797D3005E97E3 /* RMFooterLoadingCollectionReusableView.swift */; };
 		50B832B52C59314B008D960B /*  RMGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B832B42C59314B008D960B /*  RMGetAllCharactersResponse.swift */; };
+		50C3C3042CAD40C000304FFB /* RMSearchOptionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3C3032CAD40C000304FFB /* RMSearchOptionPickerViewController.swift */; };
 		50C79AF72C97066500405405 /* RMAPICacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C79AF62C97066500405405 /* RMAPICacheManager.swift */; };
 		50C79AF92C97122B00405405 /* RMEpisodeDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C79AF82C97122B00405405 /* RMEpisodeDetailViewViewModel.swift */; };
 		50C79AFB2C97129100405405 /* RMEpisodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C79AFA2C97129100405405 /* RMEpisodeDetailView.swift */; };
@@ -131,6 +132,7 @@
 		50A3CD382C564AC30029CFFC /* RMEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEndpoint.swift; sourceTree = "<group>"; };
 		50B2F9112C6797D3005E97E3 /* RMFooterLoadingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMFooterLoadingCollectionReusableView.swift; sourceTree = "<group>"; };
 		50B832B42C59314B008D960B /*  RMGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " RMGetAllCharactersResponse.swift"; sourceTree = "<group>"; };
+		50C3C3032CAD40C000304FFB /* RMSearchOptionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchOptionPickerViewController.swift; sourceTree = "<group>"; };
 		50C79AF62C97066500405405 /* RMAPICacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMAPICacheManager.swift; sourceTree = "<group>"; };
 		50C79AF82C97122B00405405 /* RMEpisodeDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RMEpisodeDetailViewViewModel.swift; path = RickAndMorty/ViewModels/EpisodeDetail/RMEpisodeDetailViewViewModel.swift; sourceTree = SOURCE_ROOT; };
 		50C79AFA2C97129100405405 /* RMEpisodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodeDetailView.swift; sourceTree = "<group>"; };
@@ -156,9 +158,9 @@
 		5024EC902C6674760034613C /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				50C3C3052CAD41A000304FFB /* Search */,
 				5024EC912C6674950034613C /* RMCharacterDetailViewController.swift */,
 				50E332A62C8F2DBB00FFDDF5 /* RMEpisodeDetailViewController.swift */,
-				5002585A2C9972D600B68885 /* RMSearchViewController.swift */,
 				503346332CA43307001BF086 /* RMLocationDetailViewController.swift */,
 			);
 			path = Other;
@@ -403,6 +405,15 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		50C3C3052CAD41A000304FFB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				5002585A2C9972D600B68885 /* RMSearchViewController.swift */,
+				50C3C3032CAD40C000304FFB /* RMSearchOptionPickerViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		50C79AFC2C971D4400405405 /* Episode */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +552,7 @@
 				50818BD72C52AC4400BE212A /* RMLocation.swift in Sources */,
 				50B832B52C59314B008D960B /*  RMGetAllCharactersResponse.swift in Sources */,
 				503346372CA4354C001BF086 /* RMLocationDetailView.swift in Sources */,
+				50C3C3042CAD40C000304FFB /* RMSearchOptionPickerViewController.swift in Sources */,
 				50A2C65C2CA4100A00B1F6AB /* RMLocationTableViewCellViewModel.swift in Sources */,
 				50E332A72C8F2DBB00FFDDF5 /* RMEpisodeDetailViewController.swift in Sources */,
 				50C79AFB2C97129100405405 /* RMEpisodeDetailView.swift in Sources */,
