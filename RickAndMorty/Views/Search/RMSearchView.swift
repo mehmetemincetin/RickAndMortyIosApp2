@@ -8,7 +8,7 @@
 import UIKit
 
 protocol RMSearchViewDelegate: AnyObject {
-    func rmSearchView(_ searchView: RMSearchView, didSelectOption option: RMSearchInputViewViewModel.dynamicOptions)
+    func rmSearchView(_ searchView: RMSearchView, didSelectOption option: RMSearchInputViewViewModel.DynamicOption)
 }
 
 final class RMSearchView: UIView {
@@ -37,6 +37,11 @@ final class RMSearchView: UIView {
         
         searchInputView.configure(with: RMSearchInputViewViewModel(type: viewModel.config.type))
         searchInputView.delegate = self
+        
+        viewModel.registerOptionChangeBloack { tuple in
+            // tuple: Option | newValue
+            self.searchInputView.update(option: tuple.0, value: tuple.1)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -83,7 +88,7 @@ extension RMSearchView: UICollectionViewDelegate, UICollectionViewDataSource {
 // MARK: - RMSearchInputViewDelegate
 
 extension RMSearchView: RMSearchInputViewDelegate {
-    func rmSearchInputView(_ inputView: RMSearchInputView, didSelectOption option: RMSearchInputViewViewModel.dynamicOptions) {
+    func rmSearchInputView(_ inputView: RMSearchInputView, didSelectOption option: RMSearchInputViewViewModel.DynamicOption) {
         delegate?.rmSearchView(self, didSelectOption: option)
     }
 }

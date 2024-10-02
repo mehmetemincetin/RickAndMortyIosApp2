@@ -10,7 +10,7 @@ import Foundation
 final class RMSearchInputViewViewModel {
     private let type: RMSearchViewController.Config.`Type`
     
-    enum dynamicOptions: String {
+    enum DynamicOption: String {
         case status = "Status"
         case gender = "Gender"
         case locationType = "Location Type"
@@ -41,7 +41,7 @@ final class RMSearchInputViewViewModel {
             return false
         }
     }
-    public var options: [dynamicOptions] {
+    public var options: [DynamicOption] {
         switch self.type {
         case .character:
             return [.status, .gender]

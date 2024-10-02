@@ -8,12 +8,14 @@
 import UIKit
 
 protocol RMSearchInputViewDelegate: AnyObject {
-    func rmSearchInputView(_ inputView: RMSearchInputView, didSelectOption option: RMSearchInputViewViewModel.dynamicOptions)
+    func rmSearchInputView(_ inputView: RMSearchInputView, didSelectOption option: RMSearchInputViewViewModel.DynamicOption)
 }
 
 final class RMSearchInputView: UIView {
     
     weak var delegate: RMSearchInputViewDelegate?
+    
+    private var stackView: UIStackView?
     
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -74,9 +76,9 @@ final class RMSearchInputView: UIView {
         return stackView
     }
     
-    private func createOptionsSelectionViews(options: [RMSearchInputViewViewModel.dynamicOptions]) {
+    private func createOptionsSelectionViews(options: [RMSearchInputViewViewModel.DynamicOption]) {
         let stackView = createOptionStackView()
-         
+        self.stackView = stackView
         for x in 0..<options.count {
             let option = options[x]
             let button = createButton(with: option, tag: x)
@@ -85,7 +87,7 @@ final class RMSearchInputView: UIView {
     }
     
     private func createButton(
-        with option: RMSearchInputViewViewModel.dynamicOptions,
+        with option: RMSearchInputViewViewModel.DynamicOption,
         tag: Int
     ) -> UIButton {
         let button = UIButton()
@@ -126,5 +128,23 @@ final class RMSearchInputView: UIView {
     
     public func presentKeyboard() {
         searchBar.becomeFirstResponder()
+    }
+    
+    public func update(option: RMSearchInputViewViewModel.DynamicOption, value: String) {
+        // Update options
+        guard let buttons = stackView?.arrangedSubviews as? [UIButton],
+              let allOptions = viewModel?.options,
+        let index = allOptions.firstIndex(of: option) else { return }
+        
+    
+        buttons[index].setAttributedTitle(
+            NSAttributedString(
+                string: value.uppercased(),
+            attributes: [
+                .font: UIFont.systemFont(ofSize: 18, weight: .medium),
+                .foregroundColor: UIColor.link
+            ]),
+            for: .normal)
+        
     }
 }

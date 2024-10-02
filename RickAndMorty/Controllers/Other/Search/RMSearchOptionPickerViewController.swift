@@ -8,7 +8,7 @@
 import UIKit
 
 final class RMSearchOptionPickerViewController: UIViewController {
-    private let option: RMSearchInputViewViewModel.dynamicOptions
+    private let option: RMSearchInputViewViewModel.DynamicOption
     private let selectionBlock: ((String) -> Void)
     
     private let tableView: UITableView = {
@@ -18,7 +18,7 @@ final class RMSearchOptionPickerViewController: UIViewController {
         return table
     }()
     
-    init(option: RMSearchInputViewViewModel.dynamicOptions, selection: @escaping (String) -> Void) {
+    init(option: RMSearchInputViewViewModel.DynamicOption, selection: @escaping (String) -> Void) {
         self.option = option
         self.selectionBlock = selection
         super.init(nibName: nil, bundle: nil)
