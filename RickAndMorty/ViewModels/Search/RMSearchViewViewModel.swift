@@ -19,6 +19,7 @@ final class RMSearchViewViewModel {
     private var optionMapUpdateBlock: (((RMSearchInputViewViewModel.DynamicOption, String)) -> Void)?
     private var searchResultHandler: ((RMSearchResultViewModel) -> Void)?
     private var noResultHandler: (() -> Void)?
+    private var searchResultModel: Codable? 
     
     
     // MARK: - Init
@@ -97,6 +98,7 @@ final class RMSearchViewViewModel {
                 
             }))}
         if let results = resultsVM {
+            self.searchResultModel = model
             self.searchResultHandler?(results)
         }else {
             // fallback error
@@ -119,6 +121,13 @@ final class RMSearchViewViewModel {
     }
     public func registerOptionChangeBloack(_ block: @escaping ((RMSearchInputViewViewModel.DynamicOption, String)) -> Void) {
         self.optionMapUpdateBlock = block
+    }
+    
+    public func locationSearchResult(at index: Int) -> RMLocation? {
+        guard let searchModel = searchResultModel as? RMGetAllLocationsResponse else {
+            return nil
+        }
+        return searchModel.results[index]
     }
     
 }
