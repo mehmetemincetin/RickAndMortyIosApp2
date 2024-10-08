@@ -124,6 +124,7 @@ final class RMEpisodeListViewViewModel: NSObject {
     }
      
 }
+
 //MARK: -CollectionView
 
 extension RMEpisodeListViewViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
