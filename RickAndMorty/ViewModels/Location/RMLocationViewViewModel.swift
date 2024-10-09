@@ -41,9 +41,7 @@ final class RMLocationViewViewModel {
     
     public var isLoadingMoreLocations =  false
     
-    private var didFinishPagination (() -> Void)? {
-        
-    }
+    private var didFinishPagination: (() -> Void)?
     
     
     // MARK: - Init

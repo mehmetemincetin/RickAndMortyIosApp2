@@ -54,9 +54,9 @@ final class RMSearchView: UIView {
             // tuple: Option | newValue
             self.searchInputView.update(option: tuple.0, value: tuple.1)
         }
-        viewModel.registerSearchResultHandler { [weak self] results in
+        viewModel.registerSearchResultHandler { [weak self] result in
             DispatchQueue.main.async {
-                self?.resultView.configure(with: results)
+                self?.resultView.configure(with: result)
                 self?.noResultView.isHidden = true
                 self?.resultView.isHidden = false
             }
