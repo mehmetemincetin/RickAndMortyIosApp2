@@ -106,9 +106,7 @@ final class RMSearchInputView: UIView {
             ]),
             for: .normal)
         
-        button.setTitle(option.rawValue, for: .normal)
         button.backgroundColor = .secondarySystemFill
-        button.setTitleColor(.label, for: .normal)
         button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
         button.tag = tag
         button.layer.cornerRadius = 6
@@ -136,7 +134,10 @@ final class RMSearchInputView: UIView {
         searchBar.becomeFirstResponder()
     }
     
-    public func update(option: RMSearchInputViewViewModel.DynamicOption, value: String) {
+    public func update(
+        option: RMSearchInputViewViewModel.DynamicOption,
+        value: String) {
+            
         // Update options
         guard let buttons = stackView?.arrangedSubviews as? [UIButton],
               let allOptions = viewModel?.options,
@@ -155,11 +156,13 @@ final class RMSearchInputView: UIView {
     }
 }
 
+// MARK: - UISearchBarDelegate
+
 extension RMSearchInputView: UISearchBarDelegate {
-    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         delegate?.rmSearchInputView(self, didChangeSearchText: searchText)
     }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         delegate?.rmSearchInputViewDidTapSearchKeyboardButton(self)
     }

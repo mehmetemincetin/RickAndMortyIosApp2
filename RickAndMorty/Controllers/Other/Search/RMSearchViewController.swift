@@ -98,6 +98,7 @@ final class RMSearchViewController: UIViewController {
     }
 }
 
+// MARK: - RMSearchViewDelegate
 extension RMSearchViewController: RMSearchViewDelegate {
    func rmSearchView(_ searchView: RMSearchView, didSelectOption option: RMSearchInputViewViewModel.DynamicOption) {
         let vc = RMSearchOptionPickerViewController(option: option) { [weak self] selection in
